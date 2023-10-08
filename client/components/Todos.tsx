@@ -16,21 +16,12 @@ function Todos() {
   }
 
   return (
-    <ul>
+    <ul className="todo-list">
       {tasks.map((task: Task) => (
-        <li
-          style={{
-            fontSize: '20px',
-            listStyleType: 'none',
-            padding: '10px',
-            display: 'flex',
-            alignItems: 'center',
-          }}
-          key={task.id}
-        >
+        <li key={task.id}>
           <label>
             <input type="checkbox" className="checkbox" />
-            {task.task}
+            <span className="task-text">{task.task}</span>
             <button
               className="delete-button"
               onClick={() => handleDelete(task.id)}
