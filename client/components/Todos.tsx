@@ -18,7 +18,7 @@ function Todos() {
   return (
     <ul className="todo-list">
       {tasks.map((task: Task) => (
-        <li key={task.id}>
+        <li key={task.id} className="slide-in-from-above">
           <label>
             <input type="checkbox" className="checkbox" />
             <span className="task-text">{task.task}</span>

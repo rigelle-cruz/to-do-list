@@ -16,6 +16,7 @@ body {
   margin: 40px auto;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 25px 50px rgba(0, 0, 0, 0.1);
   padding: 20px;
+  border-radius: 5%;
 }
 
 .header {
@@ -43,11 +44,25 @@ body {
   padding: 0;
 }
 
+@keyframes slideInFromAbove {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .todo-list li {
   text-align: left;
   display: flex;
   align-items: center;
   padding: 10px 0;
+  transform: translateY(-100%); 
+  opacity: 0; 
+  animation: slideInFromAbove 0.5s ease forwards; 
 }
 
 .todo-list li label {
@@ -66,7 +81,7 @@ body {
 
 .checkbox:checked + .task-text {
   text-decoration: line-through;
-  opacity: 0.6;
+  opacity: 0.2;
 }
 
 .delete-button {
