@@ -23,6 +23,11 @@ function AddTodo() {
   const handleFormSubmit = (event: FormEvent) => {
     event.preventDefault()
     dispatch(postTaskThenFetch(input))
+
+    setInput({
+      ...input,
+      task: '',
+    })
   }
 
   return (
